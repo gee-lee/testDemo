@@ -51,5 +51,27 @@ git branch -d 分支名称
 15、开发的工作流
 开发流程至少两个分支，master分支只放置稳定上线的版本，dev分支专门开发
 
+-------------------------------------------------------------
 
+16、给远程仓库起别名
+git remote add origin 远程仓库地址
 
+17、向远程推送代码
+git push -u origin 分支名
+
+18、克隆远程仓库代码（内部已经实现 git remote add origin 远程仓库地址 下次代码提交直接用push）
+git clone 仓库地址
+
+19、切换分支
+git checkout 分支
+
+开发完毕，上线
+1、将dev分支合并到master，进行上线
+git checkout master
+git merge dev
+git push origin master
+
+2、把dev也推送到远程
+git checkout dev
+git merge master
+git push origin dev
